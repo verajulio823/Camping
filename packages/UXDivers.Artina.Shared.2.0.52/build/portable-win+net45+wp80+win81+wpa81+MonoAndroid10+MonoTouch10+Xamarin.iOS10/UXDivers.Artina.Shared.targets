@@ -1,0 +1,13 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<UsingTask TaskName="UXDivers.Grial.Build.Tasks.PropagateThemeTask" AssemblyFile="UXDivers.Grial.Build.Tasks.dll"/>
+	<PropertyGroup>  
+	    <BuildDependsOn>  
+	        GrialTheme;  
+	        $(BuildDependsOn)
+	    </BuildDependsOn>  
+	</PropertyGroup>  
+	  
+	<Target Name="GrialTheme">  
+	    <PropagateThemeTask SourceProject="$(MSBuildProjectFullPath)" FailOnError="$(GrialFailOnError)" DumpExecutionStateOnError="$(GrialDumpExecutionStateOnError)" />
+	</Target>  
+</Project>

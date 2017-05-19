@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="Camping.WalkthroughVariantStepItemTemplate"
+	xmlns:artina="clr-namespace:UXDivers.Artina.Shared;assembly=UXDivers.Artina.Shared"
+	xmlns:local="clr-namespace:Camping;assembly=Camping"
+	xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	x:Name="StepContentPage"
+	Style="{DynamicResource WalkthroughStepStyle}"
+	>
+
+	<AbsoluteLayout Padding="20,20,20,20">
+		<!-- Background Image -->
+		<ffimageloading:CachedImage 
+			x:Name="img"
+			Source="{ StaticResource WalkthroughStepGenericPhoneBackgroundImage }"
+			Aspect="AspectFill"
+			TranslationY="60"
+			AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+			AbsoluteLayout.LayoutFlags="All" 
+			/>
+		
+		<Grid
+			ColumnSpacing="0" RowSpacing="0"
+			AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+			AbsoluteLayout.LayoutFlags="All">
+
+			<Grid.RowDefinitions>
+				<RowDefinition Height="40" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="80" />
+			</Grid.RowDefinitions>
+			
+
+			<!-- ROW 1 (MIDDLE) -->
+			<StackLayout
+				VerticalOptions="FillAndExpand"
+				Grid.Row="1">
+				<StackLayout
+					VerticalOptions="EndAndExpand"
+					Padding="60,0,60,10"
+					HeightRequest="240">
+					
+					<Label
+						x:Name="IconLabel"
+						Style="{DynamicResource WalkthroughStepIconStyle}"
+						VerticalOptions="Center"
+						HorizontalOptions="CenterAndExpand"
+						Text="{ x:Static local:GrialShapesFont.LogoGrial }"
+					/>
+
+					<Label
+						x:Name="HeaderLabel"
+						HorizontalTextAlignment="Center"
+						VerticalTextAlignment="Center"
+						HorizontalOptions="CenterAndExpand"
+						TextColor="{DynamicResource OverImageTextColor}"
+						FontSize="30"
+						FontAttributes="Bold"
+						Text="Welcome to Grial"
+					/>
+
+					<Label
+						x:Name="DescriptionLabel"
+						Text="A robust and flexible &#x0a; UIKit for Xamarin Forms!"
+						VerticalTextAlignment="Center"
+						HorizontalTextAlignment="Center"
+						HorizontalOptions="CenterAndExpand"
+						TextColor="{DynamicResource OverImageTextColor}"
+						FontSize="16"
+						/>
+				</StackLayout>
+			</StackLayout>
+
+
+
+			<!-- ROW 2 (BOTTOM) -->
+			<Grid
+				BackgroundColor="Transparent"
+				x:Name="OverlapedButtonContainer"
+				VerticalOptions="EndAndExpand"
+				Grid.Row="2">
+
+				<artina:Button 
+					Style="{DynamicResource PrimaryActionButtonStyle}"
+					x:Name="PrimaryActionButton"
+					Text="Next"
+					Command="{Binding MoveNextCommand}"
+				/>
+			</Grid>
+
+			<!-- ROW 0 (TOP) -->
+			<!-- Close Icon -->
+
+			<Label
+				Grid.Row="0"
+				FontSize="30"
+				TranslationY="20"
+				Text="{ x:Static local:GrialShapesFont.Close }"
+				HorizontalOptions="End"
+				VerticalOptions="Start"
+				TextColor="{DynamicResource OverImageTextColor}"
+				HeightRequest="30"
+				WidthRequest="30"
+				Style="{StaticResource FontIcon}">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+		</Grid>
+
+	</AbsoluteLayout>
+
+</ContentPage>
