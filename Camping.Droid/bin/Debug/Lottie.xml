@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Lottie</name>
+    </assembly>
+    <members>
+        <member name="M:Com.Airbnb.Lottie.Model.LottieComposition.FromAssetFileName(Android.Content.Context,System.String,System.Action{Com.Airbnb.Lottie.Model.LottieComposition})">
+             <summary>
+             Asynchronously loads a composition from a file stored in /assets.
+             </summary>
+            </member>
+        <member name="M:Com.Airbnb.Lottie.Model.LottieComposition.FromInputStream(Android.Content.Context,System.IO.Stream,System.Action{Com.Airbnb.Lottie.Model.LottieComposition})">
+             <summary>
+             Asynchronously loads a composition from an arbitrary input stream.
+             </summary>
+            </member>
+        <member name="M:Com.Airbnb.Lottie.Model.LottieComposition.FromJson(Android.Content.Res.Resources,Org.Json.JSONObject,System.Action{Com.Airbnb.Lottie.Model.LottieComposition})">
+             <summary>
+              Asynchronously loads a composition from a raw json object. This is useful for animations loaded from the network.
+             </summary>
+            </member>
+        <member name="M:Com.Airbnb.Lottie.Model.LottieComposition.FromAssetFileNameAsync(Android.Content.Context,System.String)">
+             <summary>
+             Asynchronously loads a composition from a file stored in /assets.
+             </summary>
+            </member>
+        <member name="M:Com.Airbnb.Lottie.Model.LottieComposition.FromAssetFileNameAsync(Android.Content.Context,System.String,System.Threading.CancellationToken)">
+             <summary>
+             Asynchronously loads a composition from a file stored in /assets.
+             </summary>
+            </member>
+        <member name="M:Com.Airbnb.Lottie.Model.LottieComposition.FromInputStreamAsync(Android.Content.Context,System.IO.Stream)">
+             <summary>
+             Asynchronously loads a composition from an arbitrary input stream.
+             </summary>
+            </member>
+        <member name="M:Com.Airbnb.Lottie.Model.LottieComposition.FromInputStreamAsync(Android.Content.Context,System.IO.Stream,System.Threading.CancellationToken)">
+             <summary>
+             Asynchronously loads a composition from an arbitrary input stream.
+             </summary>
+            </member>
+        <member name="M:Com.Airbnb.Lottie.Model.LottieComposition.FromJsonAsync(Android.Content.Res.Resources,Org.Json.JSONObject)">
+             <summary>
+              Asynchronously loads a composition from a raw json object. This is useful for animations loaded from the network.
+             </summary>
+            </member>
+        <member name="M:Com.Airbnb.Lottie.Model.LottieComposition.FromJsonAsync(Android.Content.Res.Resources,Org.Json.JSONObject,System.Threading.CancellationToken)">
+             <summary>
+              Asynchronously loads a composition from a raw json object. This is useful for animations loaded from the network.
+             </summary>
+            </member>
+    </members>
+</doc>

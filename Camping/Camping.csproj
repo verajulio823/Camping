@@ -86,6 +86,7 @@
     <Compile Include="Models\Entities\UserQuiz.cs" />
     <Compile Include="Models\Entities\user_by_circle.cs" />
     <Compile Include="Models\Entities\user_consumer.cs" />
+    <Compile Include="Models\Services\DataAccess.cs" />
     <Compile Include="Models\Services\IConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App.xaml.cs">

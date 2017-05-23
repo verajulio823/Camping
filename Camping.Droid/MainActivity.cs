@@ -16,7 +16,7 @@ using UXDivers.Artina.Shared;
 using UXDivers.Artina.Shared.Droid;
 
 using FFImageLoading.Forms.Droid;
-
+using Camping.Droid.Services;
 
 namespace Camping.Droid
 {
@@ -45,6 +45,8 @@ namespace Camping.Droid
 
 			base.OnCreate(bundle);
 
+            ReadDB readDB = new ReadDB(this);
+            readDB.copyDB();
 			//Initializing FFImageLoading
 			CachedImageRenderer.Init();
 
@@ -63,7 +65,12 @@ namespace Camping.Droid
 			DeviceOrientationLocator.NotifyOrientationChanged();
 		}
 
-	}
+        
+
+
+        
+
+    }
 
 }
 
