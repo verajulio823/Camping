@@ -289,6 +289,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HtmlFormattedLabelRenderer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -481,6 +482,66 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Splash.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\partida.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\favoritos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\favoritos_BN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconcifras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconhome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconrutas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconvidasilvestre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\costa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\experto.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mismejcamp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\selva.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sierra.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_costa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_like.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_selva.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_sierra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logoperu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconservicios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\header1.png" />
   </ItemGroup>
   <Import Project="..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
   <Import Project="..\packages\UXDivers.Artina.Shared.2.0.52\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\UXDivers.Artina.Shared.targets" Condition="Exists('..\packages\UXDivers.Artina.Shared.2.0.52\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\UXDivers.Artina.Shared.targets')" />

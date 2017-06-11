@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Camping.ArticleDetailViewPage"
+	xmlns:artina="clr-namespace:UXDivers.Artina.Shared;assembly=UXDivers.Artina.Shared"
+	xmlns:local="clr-namespace:Camping;assembly=Camping"
+	xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+	Title="Article View"
+	BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+
+    <ScrollView 
+		x:Name="outerScrollView"
+		Padding="{ DynamicResource MainWrapperPadding }">
+
+        <Grid 
+				x:Name="layeringGrid" 
+				RowSpacing="0"
+				VerticalOptions="FillAndExpand">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="240" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid 
+					Grid.Row="0"
+					Grid.RowSpan="2"
+					Padding="0"
+					BackgroundColor="Black">
+
+                <!-- MAIN IMAGE -->
+                <ffimageloading:CachedImage
+						x:Name="img"
+						Source="{ Binding PageSource.ImagePage }"
+						Aspect="AspectFill"
+						BackgroundColor="Black"
+						HorizontalOptions="FillAndExpand"
+						VerticalOptions="Start"
+						Opacity=".8"/>
+            </Grid>
+
+            <!-- MAIN HEADER -->
+            <StackLayout
+					Grid.Row="0"
+					Padding="20"
+					Spacing="0"
+					VerticalOptions="End"
+					x:Name="headers" 
+					AnchorX="0"
+					AnchorY="0">
+
+                <!-- HEADERS -->
+                <Label
+						Text="{ Binding PageSource.Title }"
+						LineBreakMode="WordWrap"
+						TextColor="{ DynamicResource OverImageTextColor }"
+						FontSize="26"
+						FontAttributes="Bold"/>
+
+                <!--<Label
+						Text="{ Binding Post.Subtitle }"
+						LineBreakMode="WordWrap"
+						TextColor="{ DynamicResource OverImageTextColor }"
+						FontSize="16"/>
+-->
+                <!--               <BoxView  
+						Style="{StaticResource BrandNameOrnamentStyle}"
+						Margin="0,20,0,0"/>
+                -->
+
+            </StackLayout>
+
+
+
+            <Grid
+					Grid.Row="1"
+					BackgroundColor="{ DynamicResource BasePageColor }">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackLayout                    
+                    x:Name="contentLayout"
+                    HorizontalOptions="FillAndExpand"
+				    VerticalOptions="FillAndExpand"
+                    Padding="0,20,10,10"
+                    >
+                                        
+                </StackLayout>
+            </Grid>
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

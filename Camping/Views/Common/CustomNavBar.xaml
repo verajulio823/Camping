@@ -12,7 +12,7 @@
 			Padding="0">
 
 			<Image
-				Source="custom_nav_bg.jpg"
+				Source="header1.png"
 				Aspect="AspectFill"/>
 		
 			<Label 
@@ -28,7 +28,7 @@
 					<TapGestureRecognizer Tapped="OnHamburgerIconTapped" />
 				</Label.GestureRecognizers>
 			</Label>
-
+<!--
 			<Label 
 				HorizontalOptions="Center"
 				VerticalOptions="Center"
@@ -49,6 +49,6 @@
 				<Label.GestureRecognizers>
 					<TapGestureRecognizer Tapped="OnCogIconTapped" />
 				</Label.GestureRecognizers>
-			</Label>
+			</Label>-->
 		</Grid >
 </ContentView>

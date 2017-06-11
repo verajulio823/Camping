@@ -2,17 +2,17 @@
 <Paths>
   <Jars></Jars>
   <ResolvedResourceDirectories>
-    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\FFImageLoading.Forms.Droid\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\FFImageLoading.Platform\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\FFImageLoading.Transformations\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\Lottie\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\Lottie.Forms.Droid\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\SQLite.Net.Platform.XamarinAndroid\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\UXDivers.Artina.Shared.Base.Droid\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\UXDivers.Artina.Shared.Droid\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\UXDivers.Effects.Droid\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\Xamarin.Forms.Platform\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\FFImageLoading.Forms.Droid\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\FFImageLoading.Platform\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\FFImageLoading.Transformations\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\Lottie\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\Lottie.Forms.Droid\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\SQLite.Net.Platform.XamarinAndroid\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\UXDivers.Artina.Shared.Base.Droid\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\UXDivers.Artina.Shared.Droid\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\UXDivers.Effects.Droid\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\Xamarin.Forms.Platform\library_project_imports\res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
   <ResolvedAssetDirectories>
     <ResolvedAssetDirectory>obj\Debug\__library_projects__\FFImageLoading.Forms.Droid\library_project_imports\assets</ResolvedAssetDirectory>
@@ -29,16 +29,16 @@
   </ResolvedAssetDirectories>
   <ResolvedEnvironmentFiles />
   <ResolvedResourceDirectoryStamps>
-    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\FFImageLoading.Forms.Droid.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\FFImageLoading.Platform.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\FFImageLoading.Transformations.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\Lottie.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\Lottie.Forms.Droid.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\SQLite.Net.Platform.XamarinAndroid.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\UXDivers.Artina.Shared.Base.Droid.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\UXDivers.Artina.Shared.Droid.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\UXDivers.Effects.Droid.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping\Camping.Droid\obj\Debug\__library_projects__\Xamarin.Forms.Platform.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\FFImageLoading.Forms.Droid.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\FFImageLoading.Platform.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\FFImageLoading.Transformations.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\Lottie.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\Lottie.Forms.Droid.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\SQLite.Net.Platform.XamarinAndroid.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\UXDivers.Artina.Shared.Base.Droid.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\UXDivers.Artina.Shared.Droid.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\UXDivers.Effects.Droid.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\veraj\Documents\Camping_backup\Camping\Camping\Camping.Droid\obj\Debug\__library_projects__\Xamarin.Forms.Platform.stamp</ResolvedResourceDirectoryStamp>
   </ResolvedResourceDirectoryStamps>
 </Paths>

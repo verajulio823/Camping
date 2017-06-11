@@ -1,3 +1,7 @@
+Camping.Droid.HtmlFormattedLabelRenderer, Camping.Droid;md5222e17341117d9ab830b4072db1f8f17.HtmlFormattedLabelRenderer
+Camping.Droid.HtmlFormattedLabelRenderer, Camping.Droid, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;md5222e17341117d9ab830b4072db1f8f17.HtmlFormattedLabelRenderer
+Camping.Droid.HtmlFormattedLabelRenderer;md5222e17341117d9ab830b4072db1f8f17.HtmlFormattedLabelRenderer
+camping.droid.HtmlFormattedLabelRenderer;md5222e17341117d9ab830b4072db1f8f17.HtmlFormattedLabelRenderer
 Camping.Droid.MainActivity, Camping.Droid;md5222e17341117d9ab830b4072db1f8f17.MainActivity
 Camping.Droid.MainActivity, Camping.Droid, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;md5222e17341117d9ab830b4072db1f8f17.MainActivity
 Camping.Droid.MainActivity;md5222e17341117d9ab830b4072db1f8f17.MainActivity

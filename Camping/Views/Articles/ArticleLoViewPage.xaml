@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Camping.Views.Articles.ArticleLoViewPage"
+	xmlns:artina="clr-namespace:UXDivers.Artina.Shared;assembly=UXDivers.Artina.Shared"
+	xmlns:local="clr-namespace:Camping;assembly=Camping"
+	xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+	Title="Article Lo View"
+	BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+
+    <!-- MAIN CONTAINER -->
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- CUSTOM NAVBAR -->
+        <local:CustomNavBar 
+			Grid.Row="0"/>
+
+        <ScrollView 
+        Grid.Row="1"
+		x:Name="outerScrollView"
+		Padding="{ DynamicResource MainWrapperPadding }">
+
+            <Grid 
+				x:Name="layeringGrid" 
+				RowSpacing="0"
+				VerticalOptions="FillAndExpand">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="240" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid 
+					Grid.Row="0"
+					Grid.RowSpan="2"
+					Padding="0"
+					BackgroundColor="Black">
+
+                    <!-- MAIN IMAGE -->
+                    <ffimageloading:CachedImage
+						x:Name="img"
+						Source="{ Binding LoPage.ImageLo }"
+						Aspect="AspectFill"
+						BackgroundColor="Black"
+						HorizontalOptions="FillAndExpand"
+						VerticalOptions="Start"
+						Opacity=".8"/>
+                </Grid>
+
+                <!-- MAIN HEADER -->
+                <StackLayout
+					Grid.Row="0"
+					Padding="20"
+					Spacing="0"
+					VerticalOptions="End"
+					x:Name="headers" 
+					AnchorX="0"
+					AnchorY="0">
+
+                    <!-- HEADERS -->
+                    <Label
+						Text="{ Binding LoPage.Title }"
+						LineBreakMode="WordWrap"
+						TextColor="{ DynamicResource OverImageTextColor }"
+						FontSize="26"
+						FontAttributes="Bold"/>
+
+                    <Label
+						Text="{ Binding Post.Subtitle }"
+						LineBreakMode="WordWrap"
+						TextColor="{ DynamicResource OverImageTextColor }"
+						FontSize="16"/>
+
+                    <!--               <BoxView  
+						Style="{StaticResource BrandNameOrnamentStyle}"
+						Margin="0,20,0,0"/>
+                -->
+
+                </StackLayout>
+
+
+
+                <Grid
+					Grid.Row="1"
+					BackgroundColor="{ DynamicResource BasePageColor }">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+
+                    <ListView
+						Grid.Row="4"
+						ItemsSource="{ Binding Comments }"
+						SeparatorColor="{ DynamicResource ListViewSeparatorColor}"
+						SeparatorVisibility="Default"
+						RowHeight="180"
+						ItemTapped="OnItemTapped"
+						VerticalOptions="FillAndExpand">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.ContextActions>
+                                        <MenuItem 
+											 Clicked="OnMore"
+											 Text="More"/>
+                                        <MenuItem 
+											 Clicked="OnDelete"
+											 Text="Delete" 
+											 IsDestructive="True" />
+                                    </ViewCell.ContextActions>
+
+                                    <local:CommentItemTemplate />
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+
+                </Grid>
+
+            </Grid>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

@@ -35,6 +35,21 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Models\LoCircle.cs" />
+    <Compile Include="Models\LoPage.cs" />
+    <Compile Include="Models\PageSource.cs" />
+    <Compile Include="ViewModels\ArticleViewModel.cs" />
+    <Compile Include="Views\Articles\ArticleExpertViewPage.xaml.cs">
+      <DependentUpon>ArticleExpertViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Articles\TabLoPage.xaml.cs">
+      <DependentUpon>TabLoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Articles\Templates\PlaceItemTemplate.xaml.cs">
+      <DependentUpon>PlaceItemTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HtmlFormattedLabel.cs" />
+    <Compile Include="Models\Detail.cs" />
     <Compile Include="Models\Entities\Admin.cs" />
     <Compile Include="Models\Entities\available_lo_by_user.cs" />
     <Compile Include="Models\Entities\Category.cs" />
@@ -92,6 +107,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Articles\ArticleLoViewPage.xaml.cs">
+      <DependentUpon>ArticleLoViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Articles\ArticleDetailViewPage.xaml.cs">
+      <DependentUpon>ArticleDetailViewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Ecommerce\ProductsGridPage.xaml.cs">
       <DependentUpon>ProductsGridPage.xaml</DependentUpon>
     </Compile>
@@ -109,6 +130,9 @@
     </Compile>
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Views\Theme\TabsPageLo.xaml.cs">
+      <DependentUpon>TabsPageLo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Theme\ThemePage.xaml.cs">
       <DependentUpon>ThemePage.xaml</DependentUpon>
     </Compile>
@@ -355,7 +379,7 @@
     <Compile Include="Views\Dashboards\Templates\DashboardItemTemplateBase.cs" />
     <Compile Include="Helpers\FontawesomeFont.cs" />
     <Compile Include="Helpers\IoniciconsFont.cs" />
-    <Compile Include="ViewModels\ArticleViewModel.cs" />
+    <Compile Include="ViewModels\TabLoViewModel.cs" />
     <Compile Include="ViewModels\ChatViewModel.cs" />
     <Compile Include="ViewModels\DashboardViewModel.cs" />
     <Compile Include="ViewModels\DocumentTimelineViewModel.cs" />
@@ -741,9 +765,45 @@
     <None Include="Gorilla.json" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup />
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Articles\ArticleLoViewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Articles\ArticleDetailViewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>
+      </SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Theme\TabsPageLo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>
+      </SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Articles\TabLoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Articles\Templates\PlaceItemTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>
+      </SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Articles\ArticleExpertViewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
   <Import Project="..\packages\UXDivers.Artina.Shared.2.0.52\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\UXDivers.Artina.Shared.targets" Condition="Exists('..\packages\UXDivers.Artina.Shared.2.0.52\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\UXDivers.Artina.Shared.targets')" />
 </Project>

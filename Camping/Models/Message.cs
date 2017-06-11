@@ -9,7 +9,18 @@ namespace Camping
 			set;
 		}
 
-		public string Title {
+        public int Id_description {
+            get;
+            set;
+        }
+
+        public int Id
+        {
+            get;
+            set;
+        }
+
+        public string Title {
 			get;
 			set;
 		}
@@ -46,6 +57,8 @@ namespace Camping
 
 		public Message (
 			User from, 
+            int id_description,
+            int id,
 			uint threadCount, 
 			bool hasAttachment,
 			string when,
@@ -55,7 +68,9 @@ namespace Camping
 			Boolean isRead)
 		{
 			From 			= from;
-			ThreadCount 	= threadCount;
+            Id_description  = id_description;
+            Id = id;
+            ThreadCount 	= threadCount;
 			HasAttachment 	= hasAttachment;
 			When 			= when;
 			Title			= title;

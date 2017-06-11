@@ -21,38 +21,45 @@ namespace Camping.Droid.Services
             this.context = context;
         }
 
-        
+
 
         public void copyDB()
         {
 
-        Stream iStream = context.Assets.Open("database/cache.db");
-        string dbPath = "/data/data/camping.Droid/files/cache.db";
-        //path  "/data/data/camping.Droid/files/cache.db"   
+            Stream iStream = context.Assets.Open("database/cache.db");
+            //string dbPath = "/data/data/camping.Droid/files/cache.db";
 
-        var oStream = new FileOutputStream(dbPath);
+            string packageName = context.ApplicationContext.PackageName;
+            string dbPath = "/data/data/" + packageName + "/files/cache.db";
 
-        bool exists = System.IO.File.Exists(dbPath);
-        long size = 0;
-        Android.Net.Uri uri = Android.Net.Uri.FromFile(new Java.IO.File(dbPath));
+            //path  "/data/data/camping.Droid/files/cache.db"   
 
-			using (var fd = context.ContentResolver.OpenFileDescriptor(uri, "r"))
-				size = fd.StatSize;
-		    	if (size == 0 ) {
-			    	byte[] buffer = new byte[2048];
-                    int length = 2048;	
-				 
-				    while (iStream.Read(buffer, 0, length) > 0)
-				    {
-					    oStream.Write(buffer, 0, length);
-				    }
-                oStream.Flush();
-				oStream.Close();
-				iStream.Close();
+            var oStream = new FileOutputStream(dbPath);
 
+            bool exists = System.IO.File.Exists(dbPath);
+            long size = 0;
+            Android.Net.Uri uri = Android.Net.Uri.FromFile(new Java.IO.File(dbPath));
 
+            using (var fd = context.ContentResolver.OpenFileDescriptor(uri, "r"))
+                size = fd.StatSize;
+            if (size == 0)
+            {
+                byte[] buffer = new byte[2048];
+                int length = 2048;
+
+                while (iStream.Read(buffer, 0, length) > 0)
+                {
+                    oStream.Write(buffer, 0, length);
                 }
+                oStream.Flush();
+                oStream.Close();
+                iStream.Close();
+
+
+            }
         }
+
+
 
 
         public void iniDB()

@@ -7,20 +7,31 @@ using SQLite.Net;
 using Xamarin.Forms;
 using System.IO;
 using MLearningDB;
+using SQLite;
+using System.Diagnostics;
 
 namespace Camping.Models.Services
 {
-    class DataAccess: IDisposable
+    public class DataAccess: IDisposable
     {
-        private SQLiteConnection connection;
+       private SQLiteConnection connection;
+       
+        
 
         public DataAccess() {
 
-                      
-            
-            var config = DependencyService.Get<IConfig>();
-            connection = new SQLiteConnection(config.Plataforma, Path.Combine(config.DirectorioDB, "cache.db"));
-            
+
+            try {
+                var config = DependencyService.Get<IConfig>();
+                connection = new SQLiteConnection(config.Plataforma, Path.Combine(config.DirectorioDB, "cache.db"));
+                connection.CreateTable<circle_by_user>();
+            }
+            catch (Exception e) {
+                Debug.WriteLine(e.Data);
+            }
+
+
+
         }
 
         
@@ -30,10 +41,13 @@ namespace Camping.Models.Services
 
         public List<circle_by_user> GetCirclesByUser(int userid) {
             //System.Linq.Expressions.Expression<Func<circle_by_user, bool>> predicate = c => c.User_id == userid ;
-            return connection.Table<circle_by_user>().Where(c => c.User_id == userid).ToList<circle_by_user>();
+            //return connection.Table<circle_by_user>().Where(c => c.User_id == userid).ToList<circle_by_user>();
+            return connection.Table<circle_by_user>().Where(c => c.User_id == userid).ToList();
         }
 
-
+        public List<circle_by_user> GetAllCirclesByUser() {
+            return connection.Table<circle_by_user>().ToList<circle_by_user>();
+        }
 
 
 

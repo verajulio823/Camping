@@ -5,9 +5,16 @@
 	x:Class="Camping.BrandBlock" 
 	Padding="20">
 
-	<Grid  
-		ColumnSpacing="10"
+    <StackLayout
+                        Orientation="Horizontal"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        >
+
+    <!--<Grid  
+		ColumnSpacing="0"
 		Padding="0"
+        HorizontalOptions="Center"
 		Style="{ StaticResource BrandContainerStyle }">
 
 		<Grid.ColumnDefinitions>
@@ -15,16 +22,18 @@
 			<ColumnDefinition Width="Auto" />
 		</Grid.ColumnDefinitions>
 
-		
+		-->
 		<Image 
 			Grid.Column="0"
-			HeightRequest="64" 
-			WidthRequest="64" 
-			Source="{ StaticResource BrandImage }" 
-			BackgroundColor="{ DynamicResource AccentColor }"
-			/>		
-		
+			HeightRequest="200" 
+			WidthRequest="200" 
+			Source="logoperu.png" 
+            HorizontalOptions="Center"
+			
+			/>
+    </StackLayout>
 
+    <!--
 		<StackLayout
 			Grid.Column="1"
 			Orientation="Vertical"
@@ -40,8 +49,10 @@
 				Style="{ DynamicResource BrandNameStyle }"
 				Text="UI.KIT" 
 				VerticalTextAlignment="Start"/>
+            
 		</StackLayout>
+        -->
 
-	</Grid>
+	<!--</Grid>-->
 
 </ContentView>

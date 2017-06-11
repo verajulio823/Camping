@@ -21,7 +21,7 @@
 	-->
 	
 	<!-- Grial Theme Exported Colors -->
-	<Color x:Key="AccentColor">#FFDA125F</Color>
+    <Color x:Key="AccentColor">#FFFFAD00</Color>
 	<Color x:Key="BaseTextColor">#666666</Color>
 
 

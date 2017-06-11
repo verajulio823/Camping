@@ -1,3 +1,4 @@
+using Camping.Views.Articles;
 using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -18,7 +19,7 @@ namespace Camping
 			_showWelcome = sayWelcome;
 
 			// Empty pages are initially set to get optimal launch experience
-			Master = new ContentPage { Title = "Grial" };
+			Master = new ContentPage { Title = "Perú Camping" };
 			Detail = NavigationPageHelper.Create(new ContentPage());
 		}
 			
@@ -35,7 +36,7 @@ namespace Camping
 			if (_showWelcome) {
 				_showWelcome = false;
 
-				await Navigation.PushModalAsync (NavigationPageHelper.Create(new WelcomePage()));
+				//await Navigation.PushModalAsync (NavigationPageHelper.Create(new WelcomePage()));
 
 				await Task.Delay (500)
 					.ContinueWith(t => NavigationService.BeginInvokeOnMainThreadAsync(InitializeMasterDetail));
@@ -51,8 +52,14 @@ namespace Camping
 
 		private void InitializeMasterDetail(){
 			Master = new MainMenuPage (new NavigationService(Navigation, LaunchSampleInDetail));
-			Detail = NavigationPageHelper.Create(new DashboardPage());
-		}
+            //Detail = NavigationPageHelper.Create(new DashboardPage());
+            //Detail = NavigationPageHelper.Create(new ArticleDetailViewPage());
+
+
+           Detail = NavigationPageHelper.Create(new ArticleLoViewPage());
+
+            //Detail = NavigationPageHelper.Create(new TabLoPage());
+        }
 
 		private void LaunchSampleInDetail(Page page, bool animated){
 			// CustomNavBarPage must be handled differently because XF seems not to be considering the

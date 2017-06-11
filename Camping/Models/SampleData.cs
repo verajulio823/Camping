@@ -1,3 +1,5 @@
+using Camping.Models;
+using Camping.Models.Services;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -21,9 +23,12 @@ namespace Camping
 		private static List<ChatMessage> _recentChatMessagesList;
 		private static List<Product> _products;
 		private static List<MovieSection> _movies;
+        private static List<Detail> _details;
+        private static PageSource _pageSource;
+        private static LoPage _loPage;
+        private static List<LoCircle> _circles;
 
-
-		private static List<Notification> _notifications;
+        private static List<Notification> _notifications;
 
 		public static List<Notification> Notifications
 		{
@@ -164,14 +169,1303 @@ namespace Camping
 			{
 				if (_comments == null)
 				{
-					_comments = Messages.GetRange((Messages.Count() / 2), (Messages.Count() / 2));
+                    _comments = Messages;
+					//_comments = Messages.GetRange((Messages.Count() / 2), (Messages.Count() / 2));
 				}
 
 				return _comments;
 			}
-		}	
+		}
 
-		public static List<User> SmallUserList
+
+        public static List<LoCircle> Circles
+        {
+            get
+            {
+                
+                /* using (var datos = new DataAccess()) {
+                
+                 }*/
+                //var datos = new DataAccess();
+                    //datos.GetCirclesByUser(24);
+
+
+                    if (_circles == null)
+                    {
+                        _circles = InitCircles();
+                        //_comments = Messages.GetRange((Messages.Count() / 2), (Messages.Count() / 2));
+                    }
+
+                return _circles;
+            }
+        }
+
+        private static List<LoCircle> InitCircles() {
+            return new List<LoCircle>
+            {
+                new LoCircle(){
+                    Id = 0,
+                    Title = "Manglares de Tumbes",
+                    Content= "Provincia de Zarumilla, Tumbes",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 0,
+                    Title = "Vichayito",
+                    Content= "Extremo norte de la costa de Piura",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 0,
+                    Title = "Playa Colores",
+                    Content= "El secreto mejor guardado de Piura",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 0,
+                    Title = "Lobitos",
+                    Content= "El sueño de la ola perfecta",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 0,
+                    Title = "Bayóvar",
+                    Content= "Las playas secretas del norte",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 0,
+                    Title = "Poémape",
+                    Content= "Provincia de San Pedro de Lloc, La Libertad",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 0,
+                    Title = "Las Aldas",
+                    Content= "Las arenas de Áncash",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 0,
+                    Title = "Tuquillo",
+                    Content= "La playa perfecta de Huarmey",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 0,
+                    Title = "Caral",
+                    Content= "Provincia de Barranca, Lima",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 0,
+                    Title = "Wakama",
+                    Content= "Provincia de Chincha, Ica",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 0,
+                    Title = "Yumake",
+                    Content= "Reserva Nacional de Paracas, Ica",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 0,
+                    Title = "Barlovento",
+                    Content= "El corazón del desierto de Ica",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 0,
+                    Title = "San Fernando",
+                    Content= "Provincia de Nasca, Ica",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 0,
+                    Title = "Puerto Inca",
+                    Content= "Provincia de Caravelí, Arequipa",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 0,
+                    Title = "Caleta San José",
+                    Content= "Provincia de Islay, Arequipa",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Cataratas de Gocta",
+                    Content= "Provincia de Bongará, Amazonas",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Kuélap",
+                    Content= "Provincia de Chachapoyas, Amazonas",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Laguna de los Cóndores",
+                    Content= "Provincia de Chachapoyas, Amazonas",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "El Limón",
+                    Content= "Un pedacito de bosque seco para todos",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Sunchubamba",
+                    Content= "Provincia de Cajamarca",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Taullipampa",
+                    Content= "Cordillera Blanca, Áncash",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Quebrada Ishinca",
+                    Content= "Cordillera Blanca, Áncash",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Hatun Potrero",
+                    Content= "Cordillera Blanca, Áncash",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Laguna Purhuay",
+                    Content= "Callejon de Conchucos, Áncash",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Laguna Jahuacocha",
+                    Content= "Cordillera Huayhuash, Áncash",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Tantamayo",
+                    Content= "Provincia de la Unión, Huánuco",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Huayllay",
+                    Content= "Provincia de Pasco",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Rúpac",
+                    Content= "Provincia de Huaral, Lima",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Nor Yauyos-Cochas",
+                    Content= "Provincia de Yauyos, Lima",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Choquequirao",
+                    Content= "Provincia de la Convención, Cusco",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Salkantay",
+                    Content= "Provincia de la Convención, Cusco",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Huayllabamba",
+                    Content= "Provincia de Urubamba, Cusco",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Ausangate",
+                    Content= "Provincia de Quispicanchis, Cusco",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Cruz del Cóndor",
+                    Content= "Provincia de Caylloma, Arequipa",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Chalhuanca",
+                    Content= "Provincia de Aymaraes, Apurimac",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Península de Capachilca",
+                    Content= "Lago Titicaca, Puno",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Archipiélago de Anapia",
+                    Content= "Lago Titicaca, Puno",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 1,
+                    Title = "Amantaní",
+                    Content= "Lago Titicaca, Puno",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 2,
+                    Title = "Cocha El Dorado",
+                    Content= "Pacaya-Samiria, Loreto",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 2,
+                    Title = "Allpahuayo-Mishana",
+                    Content= "Iquitos, Loreto",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 2,
+                    Title = "Alto Mayo",
+                    Content= "Provincia de Mayo, San Martín",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 2,
+                    Title = "Cueva de las Pavas",
+                    Content= "Tingo María, Huánuco",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 2,
+                    Title = "Pozuzo",
+                    Content= "Provincia de Oxapampa, Pasco",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 2,
+                    Title = "Bosque Sho'llet",
+                    Content= "Provincia de Oxapampa, Pasco",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 2,
+                    Title = "Kosñipata",
+                    Content= "Provincia de Paucartambo, Cusco",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 2,
+                    Title = "Manu",
+                    Content= "Provincia de Manu, Madre de Dios",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 2,
+                    Title = "Lago Sandoval",
+                    Content= "Reserva Nacional Tambopata, Madre de Dios",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 2,
+                    Title = "Chanchamayo",
+                    Content= "Provincia de Chanchamayo, Junín",
+                    ImageFavorite = 0,
+                },
+                new LoCircle(){
+                    Id = 2,
+                    Title = "Pampas del Health",
+                    Content= "Provincia de Tambopata, Madre de Dios",
+                    ImageFavorite = 0,                
+                },
+                new LoCircle(){
+                    Id = 2,
+                    Title = "Tambopata",
+                    Content= "Provincia de Tambopata, Madre de Dios",
+                    ImageFavorite = 0,
+                },
+
+            };
+        }
+
+
+        public static PageSource PageSourceFront(int Id)
+        {
+            _pageSource = initPageSource(Id);
+            return _pageSource;
+        }
+
+        public static LoPage LoPageFront(int Id) {
+            _loPage = initLoPage(Id);
+            return _loPage;
+        }
+
+        public static LoPage initLoPage(int Id) {
+            List<LoPage> lp = new List<LoPage>
+            {
+                new LoPage{
+                    ImageLo ="partida.jpg",
+                    Title = "Preparando la partida", 
+
+                },
+                new LoPage{
+                    ImageLo ="costa.jpg",
+                    Title = "Los 50 mejores campamentos Costa",
+
+                },
+                new LoPage{
+                    ImageLo ="sierra.jpg",
+                    Title = "Los 50 mejores campamentos Sierra",
+
+                },
+                new LoPage{
+                    ImageLo ="selva.jpg",
+                    Title = "Los 50 mejores campamentos Selva",
+
+                },
+                new LoPage{
+                    ImageLo ="mismejcamp.jpg",
+                    Title = "Mis mejores campamentos",
+
+                },
+                new LoPage{
+                    ImageLo ="experto.jpg",
+                    Title = "La palabra del experto",
+
+                },
+            };
+            return lp[Id];
+        }
+
+        public static PageSource initPageSource(int Id)
+        {
+            List<PageSource> ps = new List<PageSource>
+            {
+                new PageSource{
+                    ImagePage = "http://eduticservice2016.blob.core.windows.net:80/mlresources/546492b4c06c4b3a88e837e9e7e65872",
+                    Title = "Antes de salir de casa",
+                },
+                new PageSource{
+                    ImagePage = "http://eduticservice2016.blob.core.windows.net:80/mlresources/3e43e043b9f44c8989e26f0427f3327d",
+                    Title = "Calzado",
+                },
+                new PageSource{
+                    ImagePage="http://eduticservice2016.blob.core.windows.net:80/mlresources/f6cd951be8344aa2bf346d98e8680480",
+                    Title="Indumentaria",
+                },
+                new PageSource{
+                    ImagePage ="http://eduticservice2016.blob.core.windows.net:80/mlresources/d67f9ad0c19944d2a0c241384280ab24",
+                    Title = "Accesorios",
+                },
+                new PageSource{
+                    ImagePage ="http://eduticservice2016.blob.core.windows.net:80/mlresources/6c6df1cd84584be8a52e303bed2f9c6c",
+                    Title="Mochilas",
+                },
+                new PageSource{
+                    ImagePage = "http://eduticservice2016.blob.core.windows.net:80/mlresources/672968b7a48843e4abfbd34eb5869f32",
+                    Title="Walter Wust",
+                },
+                new PageSource{
+                    ImagePage = "http://eduticservice2016.blob.core.windows.net:80/mlresources/3a3b026232f94e8aae622be7212ee06f",
+                    Title="Richard Hidalgo",
+                },
+                new PageSource{
+                    ImagePage = "http://eduticservice2016.blob.core.windows.net:80/mlresources/7a3d022e9d024e0cb7f6f3dab8300f7e",
+                    Title="Ricardo Balarezo",
+                },
+                new PageSource{
+                    ImagePage = "http://eduticservice2016.blob.core.windows.net:80/mlresources/130700a656bc4cd49f6be5ca32071958",
+                    Title="Duilio Vellutino",
+                },
+                new PageSource{
+                    ImagePage = "http://eduticservice2016.blob.core.windows.net:80/mlresources/fa9d55910fc7474dbf5135a7ea8e5b5d",
+                    Title="Ernesto Málaga",
+                },
+                new PageSource{
+                    ImagePage = "http://eduticservice2016.blob.core.windows.net:80/mlresources/791cf4537d3c41898c8b0281e7c6e237",
+                    Title="Miguel López",
+                },
+
+
+            };
+            return ps[Id];
+        }
+
+
+
+        public static List<Detail> Details {
+
+            get {
+
+                if (_details == null) {
+
+                    _details = InitDetail();
+
+                }
+                return _details;
+                
+            }
+       
+        }
+        
+
+        private static List<Detail> InitDetail() {
+            
+
+                return new List<Detail> {
+
+                new Detail {
+                    Id_Lo = 0,
+                    Title = "A tener en cuenta",
+                    Color_Title ="",
+                    Content = "- Nunca vayas de caminata con zapatos comprados el día anterior. Por más buenos que sean, requieren de algunos días de uso para ofrecer su máximo rendimiento y comodidad.</p><p>- Lleva siempre un paquete de paños húmedos (wipes) como elemento de higiene personal.</p><p>- Ten siempre a mano una buena linterna de cabeza (head lamp) con pilas bien cargadas. Ojo, usa siempre pilas recargables.</p><p>- Viaja con un buen mapa de la zona que vas a recorrer. Vale la pena visitar el Instituto Geográfico Nacional de la Av. Aramburú.</p><p>- Lleva agua suficiente pero en botellas recargables (toma-todo), así reducirás la contaminación con envases plásticos.</p><p>- Lleva algo de dinero en lugar de alimentos envasados ya que permite interactuar con la gente local y disfrutar de la buena sazón regional.</p><p>- Fruta fresca y nueces, pasas y granola serán siempre mejores que los snacks fritos y extrasazonados.</p><p>- Lleva siempre un traje de baño, así vayas a la puna. Nunca se sabe dónde aparecerá una buena catarata o unas aguas termales.</p><p>- Pasar frío tiene más que ver con el olvido que con las condiciones ambientales o económicas. Las casacas y polares son hoy baratos y ligeros.</p><p>- Busca siempre la ayuda de guías locales. Son quienes mejor conocen el lugar y suelen ser gente amable y hospitalaria.",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/0829c461f59e4780acb233543ad6a4e1",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 0
+
+                },
+
+                new Detail {
+                    Id_Lo = 1,
+                    Title = "",
+                    Color_Title ="",
+                    Content = "<p>Durante cuatro décadas, la evolución constante ha sido la verdadera visión de la familia HI-TEC. Cada&nbsp;<span style=\"line-height: 1.42857;\">producto es cuidadosamente desarrollado pensando en el diseño, la accesibilidad, el funcionamiento y la&nbsp;</span><span style=\"line-height: 1.42857;\">tecnología. Es en este último campo, en el que nos hemos centrado durante los últimos años, aplicando y&nbsp;</span><span style=\"line-height: 1.42857;\">desarrollando en nuestros productos la más reciente tecnología: V-Lite, Ion-Mask, S.U.Z.E, Thermo-Dri, Xcm,&nbsp;</span><span style=\"line-height: 1.42857;\">i-Shell, Ortholite, Flexzone, Thinsulate, Big Fit y 3D Counter Balance",
+                    ColorBackground = "",
+                    Image = "",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+
+                },
+
+                new Detail {
+                    Id_Lo = 1,
+                    Title = "",
+                    Color_Title ="",
+                    Content = "<p>La entresuela moldeada por compresión Eva amortigua los impactos del exterior.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/95ad51aac3944487ac4659599242082f",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+
+                },
+
+                new Detail {
+                    Id_Lo = 1,
+                    Title = "",
+                    Color_Title ="",
+                    Content = "<p>Membrana con poros respirables, extremadamente fuerte, que evita el ingreso del agua al calzado.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/dab3233541c14b2da1df8b53ca969b06",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+
+                },
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "",
+                    Color_Title ="",
+                    Content = "<p>La plantilla liviana Ortholite® brinda comodidad, amortiguación, durabilidad y controla la humedad en cada paso.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/f87fc79ef99144de99f53cc1494e695b",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+
+                },
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "",
+                    Color_Title ="",
+                    Content = "<p>La suela de alto rendimiento Vibram proporciona mejor tracción, mayor comodidad y una durabilidad de reconocimiento mundial.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/75293d50fc904423aa38e12d2a46e86a",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+
+                },
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "",
+                    Color_Title ="",
+                    Content = "<p>Multi Directional Traction Outsoles (MDT), se refiere a la tecnología empleada por HI-TEC para suelas que proveen un máximo agarre en direcciones especificas.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/16771d4428314564bd2fc4d42dc6ec47",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+
+                },
+
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "",
+                    Color_Title ="",
+                    Content = "<p>Nuestra tecnología patentada i-SHELL mejora el ajuste y el soporte de la capellada. De ese modo, los excursionistas pueden continuar con su aventura pase lo que pase.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/ecd9e37b5cc948d695ca5ab78c746455",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+
+                },
+
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "",
+                    Color_Title ="",
+                    Content = "<p>La tecnología 3D Counter Balance proporciona estabilidad y amortiguación, dando como resultado que el centro de presión se haga más liso y recto. Además, esta tecnología reduce la pronación (mala postura del pie) y las posibilidades de lesionarse. En general, logra un ciclo de caminata más eficiente y seguro.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/604f7aa4803b4f9e867d67fa94d08215",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+
+                },
+                 new Detail {
+                     Id_Lo = 1,
+                    Title = "",
+                    Color_Title ="",
+                    Content = "<p>En HI-TEC nos impulsa el incansable deseo de asegurarnos que la gente disfrute la vida al máximo y que cada uno de nuestros productos colme las expectativas de nuestros consumidores. HI-TEC es una marca auténtica, con productos innovadores y para gente que se inspirada día a día en la vida.</p>",
+                    ColorBackground = "",
+                    Image = "",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+
+                },
+
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "V-LITE",
+                    Color_Title = "#6AADE4",
+                    Content = "<p>Libera todo el peso posible sin&nbsp;<span style=\"line-height: 1.42857;\">sacrificar rendimiento ni durabilidad.&nbsp;</span><span style=\"line-height: 1.42857;\">Cada zapato que posee la tecnología&nbsp;</span><span style=\"line-height: 1.42857;\">V-LITE de cosntrucción vertical, tiene&nbsp;</span><span style=\"line-height: 1.42857;\">como base 5 elementos claves:</span></p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/828b60ac024046efa64711782a4db58e",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+
+                },
+
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "Suelas Confort-Tec",
+                    Color_Title = "#6AADE4",
+                    Content = "<p>Brinda mayor protección al momento de pisar gracias a sus puntos de absorción. Mantiene el pie seco por sus orificios de ventilación.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/35e324ca994044b49b0a7520fce469f0",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+
+                },
+
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "Suela ultra liviana",
+                    Color_Title = "#6AADE4",
+                    Content = "<p>Planta hecha a base de caucho y carbón que permite reducir el peso hasta un 15% y brinda máximo agarre en condiciones extremas.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/5d713b5a0c3a43f28bfe7ce3a3ac2bd6",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+
+                },
+
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "Capellada V-LITE",
+                    Color_Title = "#6AADE4",
+                    Content = "<p>Elaborada con cuero liviano de resistencia extrema.<br></p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/18c29793c02b4907befc713bdf5eae16",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "Entresuela liviana CMEVA",
+                    Color_Title = "#6AADE4",
+                    Content = "<p>Diseñada con una mezcla de materiales que la hace más liviana que una suela de EVA normal.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/dbbcb6ed8a2f41f187aa0a8f7d31db55",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "Entresuela Stabila Flex Plus",
+                    Color_Title = "#6AADE4",
+                    Content = "<p>Fabricada con plástico reciclado. Brinda rigidez en la parte trasera del calzado y flexibilidad en la parte delantera.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/0776b1200f114ae7aa7089044810f023",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "ion-mask",
+                    Color_Title = "#6AADE4",
+                    Content = "<p>Hi-Tec y los Laboratorios P2i han unido esfuerzos para emplear la tecnología ION-MASK en el campo del calzado.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/4b4ea58a20aa405883cc197691f8bcd1",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "Impermeable",
+                    Color_Title = "#6AADE4",
+                    Content = "<p>Ion Mask permite que cada una de las fibras reciba una capa de polímero lo que las hace repelentes al agua.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/493a7177eeb0410da41095dafbc48cc2",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "Se conserva limpio",
+                    Color_Title = "#6AADE4",
+                    Content = "<p>Ayuda no solo a repeler los líquidos sino también evita que la suciedad y el barro se acumulen.<br></p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/6dfd32446bab440da3697bffbd9cfa50",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "Se conserva limpio",
+                    Color_Title = "#6AADE4",
+                    Content = "<p>Ayuda no solo a repeler los líquidos sino también evita que la suciedad y el barro se acumulen.<br></p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/6dfd32446bab440da3697bffbd9cfa50",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "Respirable",
+                    Color_Title = "#6AADE4",
+                    Content = "<p>La membrana interior del zapato permite que la humedad producida por el pie al caminar pueda salir.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/066e98e13b294f3c978d52679547025e",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "Liviano",
+                    Color_Title = "#6AADE4",
+                    Content = "<p>El calzado es mucho más liviano.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/7bacbe4b59ab47aa9fbe15dfcaaaf24c",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "Eco-amigable",
+                    Color_Title = "#6AADE4",
+                    Content = "<p>Se utilizan cantidades mínimas de químicos para su fabricación.<br></p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/45bef29b072d44afbc655ecaf50d51fe",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "",
+                    Color_Title = "#6AADE4",
+                    Content = "<p>&nbsp;</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/e178a5f505fa4bc8a68069e6a0c29410",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "",
+                    Color_Title = "#6AADE4",
+                    Content = "<p>&nbsp;</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/91cc166e619a432c828f633c8b14747d",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "",
+                    Color_Title = "#6AADE4",
+                    Content = "<p>&nbsp;</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/612cc76dc99e49f88c48772f28963606",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "",
+                    Color_Title = "#6AADE4",
+                    Content = "<p>&nbsp;</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/7034ce42032b49a988894e3ef5f25088",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "",
+                    Color_Title = "#6AADE4",
+                    Content = "<p>&nbsp;</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/52f18292125e4436a4f9780efefbcb29",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+                 new Detail {
+                    Id_Lo = 1,
+                    Title = "",
+                    Color_Title = "#6AADE4",
+                    Content = "<p>&nbsp;</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/81604034f4c64710904ab74f3a087347",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+
+                 new Detail {
+                    Id_Lo = 2,
+                    Title = "Listos para el campo",
+                    Color_Title = "#AA272F",
+                    Content = "<p>Desde que hace más de cien años, cuando el británico Thomas H. Holding comenzó a propagar la práctica del campismo con fines turísticos, mucha agua ha pasado bajo la carpa. Hoy en día, la indumentaria de los amantes de la naturaleza se ha transformado y conceptos como la nanotecnología son parte fundamental de una industria creciente y comprometida con la conservación de la naturaleza.&nbsp;</p><p>El primer consejo que le damos es que se informe acerca de las condiciones meteorológicos de la zona que va a visitar, esto le permitirá saber qué tipo de ropa llevar al campo. El segundo, que lleve siempre ropa de abrigo, aunque vaya al desierto del Sahara, uno nunca sabe con la naturaleza. Para la indumentaria superior, siempre guíese por la clásica teoría de las ‘tres capas’, sobre todo si va a la montaña. En cuanto a la sección inferior, procure no usar jeans, vista telas livianas, que se secan con rapidez. Otras piezas básicas son mallas para retener el calor corporal en climas fríos, shorts de tela y ropa de baño (así vaya al Himalaya).</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/81604034f4c64710904ab74f3a087347",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+                },
+                 new Detail {
+                    Id_Lo = 2,
+                    Title = "Pantalones y shorts",
+                    Color_Title = "#AA272F",
+                    Content = "<p>Adquiera telas ligeras, de secado rápido, de preferencia que sean desmontables (que se convierten en bermudas) y con bolsillos multipropósito.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/8ba64fafb8ff4340a0da851f723c9598",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+                 new Detail {
+                    Id_Lo = 2,
+                    Title = "Medias",
+                    Color_Title = "#AA272F",
+                    Content = "<p>Existen actualmente en el mercado fibras naturales que previenen la proliferación de bacterias, eliminan el sudor y evitan malos olores. Asimismo, deben conservar la temperatura, sobre todo para climas de montaña.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/e5b1d3ff76d9451fbdd06a48a083baa2",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+                 new Detail {
+                    Id_Lo = 2,
+                    Title = "Tres capas",
+                    Color_Title = "#FFFFFF",
+                    Content = "<p>El objetivo primordial de este concepto es mantener el cuerpo seco, al evitar que tanto la condensación del sudor, como los factores externos (lluvia y viento) ingresen al cuerpo y lo enfríen; además ayuda a soportar las bajas temperaturas. Esta teoría se puede aplicar a todo tipo de disciplina como el trekking, el andinismo, el campismo, e incluso el motociclismo. Es muy importante que los materiales que elijamos evacúen con facilidad la transpiración, pues la humedad generada por el propio organismo puede ser tanto o más peligrosa que la lluvia. Existen fibras sintéticas, como el polipropileno y el polartec que sirven bien a estos propósitos.</p>",
+                    Color_Content = "#FFFFFF",
+                    ColorBackground = "#AA272F",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/e5b1d3ff76d9451fbdd06a48a083baa2",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+                },
+                 new Detail {
+                    Id_Lo = 2,
+                    Title = "Interior",
+                    Color_Title = "#AA272F",
+                    Content = "<p>En contacto con la piel. Su función es alejar el sudor del cuerpo y evitar que nuestro cuerpo se enfríe.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/9f344e1892cb48709f5bf6e6a5bb50ba",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+
+                 new Detail {
+                    Id_Lo = 2,
+                    Title = "Media",
+                    Color_Title = "#AA272F",
+                    Content = "<p>Retiene el calor corporal y genera un microclima interior; también debe permitir la evacuación del sudor.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/92b2cdcbe1c54b80a3abeb85260d2a96",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+                 new Detail {
+                    Id_Lo = 2,
+                    Title = "Exterior",
+                    Color_Title = "#AA272F",
+                    Content = "<p>Esta capa debe protegernos de la lluvia, la nieve y el viento, además de seguir expulsando la transpiración.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/50bff50c1518462ba0b629816a9b41c3",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+                 new Detail {
+                    Id_Lo = 3,
+                    Title = "Listos para el campo",
+                    Color_Title = "#AA272F",
+                    Content = "<p>Gorras, lentes, menaje de cocina, gas, iluminación, la lista de objetos que hacen la vida en la carpa más llevadera puede convertirse en interminable, sin embargo, le recomendamos que para no perder la esencia de un campamento, trate de llevar solo lo indispensable. Después de todo, se trata de compenetrarse con la naturaleza no de imitar su vida citadina.&nbsp;</p><p>Una buena carpa es algo esencial y en lo que no vale la pena escatimar gastos (ver recuadro). Otro tema capital es la alimentación y el agua, nosotros recomendamos consumir alimentos frescos en vez de llevar enlatados, por lo cual una cocinilla a gas es ideal; junto a ello debe llevar menaje adecuado para la cantidad de personas (lo venden en packs). No olvide llevar linterna, pilas recargables extra, colchonetas, algunos bancos o sillas de campo y una pequeña mesa plegable para cocinar y comer. Otra cosa que debe tener en cuenta es el manejo de desperdicios, no deje nada en el lugar, acumule todo en bolsas y llévelo consigo de regreso a casa.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/50bff50c1518462ba0b629816a9b41c3",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+                },
+
+                 new Detail {
+                    Id_Lo = 3,
+                    Title = "La carpa",
+                    Color_Title = "#FFFFFF",
+                    Content = "<p>Descendientes de los refugios creados por los hombres de la era del hielo, las carpas son el elemento básico de todo campamento, y saber armarla y orientarla debe ser una de las habilidades básicas de todo campista. Fueron los británicos quienes desarrollaron las primeras carpas y hasta mediados del siglo XX tuvieron la hegemonía en su fabricación. Existen básicamente cuatro tipos de carpas: las autoportables, que se sostienen sobre varillas flexibles que al unirse con el cuerpo y el sobretecho forman un solo conjunto; a estas pertenecen las famosas carpas de tipo iglú. Luego tenemos la carpa isotérmica, ideal para alta montaña, que está compuesta por dos cuerpos principales, uno interior y otro exterior, lo que permite la conservación de la temperatura en el interior. El tercer tipo es la carpa canadiense, que constituye la clásica tienda de campaña, con techo a dos aguas, alta y espaciosa, por lo general de lonas gruesas. Finalmente, está la carpa estructural, que posee divisiones y es útil para permanencias prolongadas.<br></p>",
+                    Color_Content = "#FFFFFF",
+                    ColorBackground = "#AA272F",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/50bff50c1518462ba0b629816a9b41c3",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+                },
+
+                 new Detail {
+                    Id_Lo = 3,
+                    Title = "",
+                    Color_Title = "#AA272F",
+                    Content = "<p>&nbsp;&nbsp;</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/5e1f273602604ab8b1f834ee4552adaa",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+                 new Detail {
+                    Id_Lo = 3,
+                    Title = "Guantes",
+                    Color_Title = "#AA272F",
+                    Content = "<p>Indispensables para las grandes alturas, deben permitir realizar movimientos libres a los dedos, de lo contrario serán incómodos.<br></p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/d94eb621d40748acb7df21e0535c1140",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+                 new Detail {
+                    Id_Lo = 3,
+                    Title = "Gorros",
+                    Color_Title = "#AA272F",
+                    Content = "<p>Protegen al usuario del sol directo en el rostro y mantienen la cabeza a temperatura adecuada, evitando la insolación.<br></p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/5c815a100a8d4a689a47f57269bbef2b",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+                 new Detail {
+                    Id_Lo = 3,
+                    Title = "Gorros",
+                    Color_Title = "#AA272F",
+                    Content = "<p>Con la alta radiación solar causada por el cambio climático este accesorio es un deber de todo campista.<br></p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/3bae674ce4284a8db73b938bf7fe5270",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+                 new Detail {
+                    Id_Lo = 3,
+                    Title = "Cocina",
+                    Color_Title = "#AA272F",
+                    Content = "<p>Debe ser portátil y de preferencia a gas. Transpórtela con cuidado y colóquela lejos de objetos inflamables y de las paredes de la carpa.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/a9ce985cd1834342ab7271dcb575a3d4",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+
+                 new Detail {
+                    Id_Lo = 3,
+                    Title = "Sillas",
+                    Color_Title = "#AA272F",
+                    Content = "<p>Existen de todo tipo, y son indispensables para el relax, la lectura y la comida.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/37ced05772214ca792f7c5c0ebcd5c15",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+                 new Detail {
+                    Id_Lo = 3,
+                    Title = "GPS: Marcando la ruta",
+                    Color_Title = "#AA272F",
+                    Content = "<p>El Sistema de Posicionamiento Global es un instrumento indispensable para quienes se aventuran en sitios poco visitados, pues es una excelente herramienta de orientación. A través de él, es posible marcar la posición de un individuo con una precisión de centímetros. El sistema se encuentra conectado a 24 satélites que orbitan la Tierra y cubren cada palmo del globo. Los apasionados de la geografía pueden crear mapas exactos de sus rutas, y recorrer con mayor confianza los caminos menos transitados de nuestro territorio. Existen diversas marcas y modelos de GPS, desde aquellos sencillos que sirven para medir la posición del usuario hasta aquellos diseñados para crear mapas en relieve.</p>",
+                    ColorBackground = "",
+                    Image = "",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+                },
+
+                 new Detail {
+                    Id_Lo = 3,
+                    Title = "",
+                    Color_Title = "#AA272F",
+                    Content = "<p>&nbsp;&nbsp;</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/bf9b842747674174af37a05ef2bf88ed",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+
+                 new Detail {
+                    Id_Lo = 3,
+                    Title = "Iluminación",
+                    Color_Title = "#AA272F",
+                    Content = "<p>Puede ser a baterías o a gas (petromax); y es otro de los accesorios indispensables para las noches.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/5efb3753b4ec477490c0350c4770d6d0",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+
+                 new Detail {
+                    Id_Lo = 4,
+                    Title = "El mundo a tus espaldas",
+                    Color_Title = "#AA272F",
+                    Content = "<p>Elegir y armar su mochila es una tarea delicada y muy cuidadosa, porque dependiendo de que tan bien armada esté, su viaje podrá ser una experiencia de mejor calidad, y no un infierno en la Tierra. Tenga en cuenta que de solo una mochila no vive el campista, sobre todo si va a realizar excursiones. Por eso le recomendamos lo siguiente: una mochila de entre 25 a 45 litros para los hombros, o valijas si puede llegar en auto al destino. La ventaja de estas últimas es que al tener cierre a lo largo, permite saber que hay dentro de un solo vistazo; estas son ideales para guardar su ropa y accesorios. Para el equipo y la comida le recomendamos usar bolsas secas (drybags), y para las excursiones, mochilas (daybags) que incluso pueden contar con sistemas de hidratación (camelbags) para poder beber líquidos sin necesidad de parar o llevar una botella extra. Otros contenedores prácticos son los canguros, ideales para guardar documentos, dinero, cámaras pocket, libretas, entre otros objetos que normalmente llevamos en los bolsillos. Al elegir una mochila es importante que esta sea lo más resistente posible al agua y asegurarse antes de salir que sus cierres funcionen de forma adecuada.</p>",
+                    ColorBackground = "",
+                    Image = "",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+                },
+
+                 new Detail {
+                    Id_Lo = 4,
+                    Title = "Valijas",
+                    Color_Title = "#AA272F",
+                    Content = "<p>Son ideales para guardar ropa, accesorios de cocina y menaje. Las recomendamos en vez de las mochilas cuando el destino no requiere caminata.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/c3901e5201924f17bec54347c1a815b9",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+                 new Detail {
+                    Id_Lo = 4,
+                    Title = "Canguros",
+                    Color_Title = "#AA272F",
+                    Content = "<p>Ideales para cargar objetos livianos y de uso recurrente como cámaras pocket, documentos, dinero, libretas de nota, etc. Asegúrese de fijarla firmemente alrededor de su cuerpo para que no estorbe al caminar.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/9b0c6be323024e01a3c5aca5775d3066",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+                 new Detail {
+                    Id_Lo = 4,
+                    Title = "Daypack",
+                    Color_Title = "#AA272F",
+                    Content = "<p>Indispensable para las excursiones. Siempre deben tener agua, algo de alimentos, ropa de abrigo y todo lo necesario para poder realizar excursiones desde el campamento.</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/f2d719fe2071487d9367a45bb09c62c9",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+
+                 new Detail {
+                    Id_Lo = 4,
+                    Title = "Armando la mochila",
+                    Color_Title = "#FFFFFF",
+                    Content = "<p>Llenar la mochila debe ser una acción cuidadosa. Procure equilibrar bien el peso para evitar caídas, inclinaciones o pérdida de equilibrio al momento de caminar. Doble bien la ropa para que pueda caber sin problemas y nunca coloque objetos punzantes en ella sin la debida protección. Casi todas la mochilas cuentan con aditamentos externos para sujetar carpas, bolsas de dormir, bastones, entre otros, así que no los coloque dentro de la mochila. Asegúrese de que esta se adapte correctamente a la espalda, con cintas de compresión en la cintura y en el pecho para mantenerla estable y tiras acolchadas para un mejor apoyo sobre los hombros.</p>",
+                    Color_Content = "#FFFFFF",
+                    ColorBackground = "#AA272F",
+                    Image = "",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+                },
+
+                 new Detail {
+                    Id_Lo = 4,
+                    Title = "",
+                    Color_Title = "#AA272F",
+                    Content = "<p>&nbsp;&nbsp;</p>",
+                    ColorBackground = "",
+                    Image = "http://eduticservice2016.blob.core.windows.net:80/mlresources/afb8b9cdca3c4bc5994401f2c6bbfd1a",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 1
+                },
+                 new Detail {
+                    Id_Lo = 5,
+                    Title = "Naturalista, fotógrafo y editor",
+                    Color_Title = "#00549F",
+                    Content = "<p>&nbsp;&nbsp;</p>",
+                    ColorBackground = "",
+                    Image = "",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+                },
+                 new Detail {
+                    Id_Lo = 5,
+                    Title = "",
+                    Color_Title = "#00549F",
+                    Content = "<p>Aunque he aprendido que cada uno tiene sus tiempos y manías a la hora de diseñar y organizar un campamento, hay una regla de oro que debe asumirse cuando uno viaja por un país como el Perú, especialmente si el destino es remoto: “lo único seguro es… que no hay nada seguro”. Eso significa que hay que estar preparado para las eventualidades y cambio de planes que la naturaleza y las circunstancias proponen. Desarrollar nuestra flexibilidad y actitud ante el cambio, permite sacar provecho de las situaciones que el destino nos plantea.</p>",
+                    ColorBackground = "",
+                    Image = "",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+                },
+                 new Detail {
+                    Id_Lo = 6,
+                    Title = "Montañista y guía internacional de montaña",
+                    Color_Title = "#00549F",
+                    Content = "<p>&nbsp;</p>",
+                    ColorBackground = "",
+                    Image = "",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+                },
+                 new Detail {
+                    Id_Lo = 6,
+                    Title = "",
+                    Color_Title = "#00549F",
+                    Content = "<p>Elegir el mejor sitio para acampar en el Perú es una tarea complicada, sabiendo lo generosa que es nuestra geografía, pero creo que la cordillera Blanca (Áncash), la cordillera tropical más alta del mundo, es uno de mis lugares preferidos. A los aficionados siempre les recomiendo que se informen bien acerca de la zona que van a visitar, de las condiciones climáticas, si hay rutas de transporte, agua. Y sobre todo, informar a sus familiares y/o amigos su destino y cuándo piensan retornar. Un equipo adecuado debe ser resistente y ligero, ropa que nos proteja del viento y la lluvia, y nos abrigue del frío.</p>",
+                    ColorBackground = "",
+                    Image = "",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+                },
+                 new Detail {
+                    Id_Lo = 7,
+                    Title = "Geógrafo, consultor viajero, director de Perú 8mil",
+                    Color_Title = "#00549F",
+                    Content = "<p>&nbsp;</p>",
+                    ColorBackground = "",
+                    Image = "",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+                },
+                 new Detail {
+                    Id_Lo = 7,
+                    Title = "",
+                    Color_Title = "#00549F",
+                    Content = "<p>Mi recomendación principal es que antes de viajar se informen lo mejor posible acerca del lugar elegido, sobre todo con los últimos datos que proporciona la gente local, que son los que mejor conocen la zona. Durante el campamento lo mejor es hacer un buen diseño de ubicación de carpas, cuidando el viento, la luz, y dejando lugares comunes que hacen más ameno el campamento, para que el que cocina no quede solo, o alguna carpa quede con la puerta al viento o si llueve no esté en una zona donde se empoza agua.</p>",
+                    ColorBackground = "",
+                    Image = "",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+                },
+                 new Detail {
+                    Id_Lo = 8,
+                    Title = "Aventurero profesional, guía de deportes de aventura",
+                    Color_Title = "#00549F",
+                    Content = "<p>&nbsp;</p>",
+                    ColorBackground = "",
+                    Image = "",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+                },
+                 new Detail {
+                    Id_Lo = 8,
+                    Title = "",
+                    Color_Title = "#00549F",
+                    Content = "<p>Lo primero que se debe hacer al armar un campamento es ubicar una fuente de agua. Esto es probablemente lo más importante, ya que asegura una provisión para beber, cocinar y asearse. Luego se debe buscar un lugar plano y quitar los objetos del piso que puedan molestar. Hay que hacer un esfuerzo y tomarse un tiempo por elegir y limpiar bien el lugar donde se plantará la carpa, ya que una pequeña inclinación o “falso plano” (aparentemente inofensivo), hará que uno se vaya resbalando varias veces durante la noche y termine durmiendo mal.</p>",
+                    ColorBackground = "",
+                    Image = "",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+                },
+                 new Detail {
+                    Id_Lo = 9,
+                    Title = "Montañista y Outdoor Trainer certificado. Presidente de Perú 8mil",
+                    Color_Title = "#00549F",
+                    Content = "<p>&nbsp;</p>",
+                    ColorBackground = "",
+                    Image = "",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+                },
+                 new Detail {
+                    Id_Lo = 9,
+                    Title = "",
+                    Color_Title = "#00549F",
+                    Content = "<p>Para armar un campamento es fundamental considerar un lugar plano, lejos de peligros de caída de piedras o rocas, lo más cubierto del viento posible, un lugar seco por donde no hay rastros de paso de agua. Otro factor de importancia, poco considerado, es el armado de la carpa. Ya que esta debe tener todas las estacas bien colocadas, todos los “vientos” (cuerdas que tensan las paredes) muy bien tensados. El buen armado de la carpa puede hacer mucho más placentero el descanso.</p>",
+                    ColorBackground = "",
+                    Image = "",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+                },
+                 new Detail {
+                    Id_Lo = 10,
+                    Title = "Antropólogo, guía de montaña y director de Anda Treks",
+                    Color_Title = "#00549F",
+                    Content = "<p>&nbsp;</p>",
+                    ColorBackground = "",
+                    Image = "",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+                },
+                 new Detail {
+                    Id_Lo = 10,
+                    Title = "",
+                    Color_Title = "#00549F",
+                    Content = "<p>Coloque siempre la puerta de su tienda de campaña del lado opuesto de donde sopla el viento (no siempre la mejor vista es la adecuada). Coloque siempre un aislante (fibras de platino o colchonetas delgadas) para que la humedad no penetre en la carpa y se traslade a su cuerpo. Procure no ingerir alimentos pesados en las noches; la digestión y el metabolismo se hace más lento a grandes alturas. Cuando salga de caminata nunca pregunte ¿cuánto falta? Esto puede provocar frustración cuando se trata de rutas largas. Finalmente, trate de generar la mínima cantidad de basura y, si lo hace, cargue con ella de regreso.</p>",
+                    ColorBackground = "",
+                    Image = "",
+                    ListImages = new List<string>{
+
+                    },
+                    TypeTemplate = 2
+                },
+
+            };
+
+        }
+
+
+        public static List<User> SmallUserList
 		{
 			get
 			{
@@ -297,14 +1591,18 @@ namespace Camping
 		private static string[] InitNames()
 		{
 			return new[]{
-				"Pat Davies",
-				"Janis Spector",
-				"Regina Joplin",
-				"Jaco Morrison",
-				"Margaret Whites",
-				"Skyler Harrisson",
-				"Al Pastorius",
-			};
+				"Antes de salir de casa",
+				"Calzado",
+				"Indumentaria",
+				"Accesorios",
+				"Mochilas",
+				"Walter Wust",
+				"Richard Hidalgo",
+                "Ricardo Balarezo",
+                "Duilio Vellutino",
+                "Ernesto Málaga",
+                "Miguel López",                
+            };
 		}
 
 		private static List<string> InitSocialImageGalleryItems()
@@ -382,16 +1680,36 @@ namespace Camping
 				new User( Names[2], UsersImagesList[2] ),
 				new User( Names[3], UsersImagesList[3] ),
 				new User( Names[4], UsersImagesList[4] ),
-				new User( Names[5], UsersImagesList[5] ),
-				new User( Names[6], UsersImagesList[6] ),
-			};
+				new User( Names[5], UsersImagesList[0] ),
+				new User( Names[6], UsersImagesList[1] ),
+                new User( Names[7], UsersImagesList[2] ),
+                new User( Names[8], UsersImagesList[3] ),
+                new User( Names[9], UsersImagesList[4] ),
+                new User( Names[10], UsersImagesList[0] ),
+            };
 		}
+        
 
 		private static List<Post> InitPosts()
 		{
 			return new List<Post> {
 
-				new Post {
+                new Post {
+                    Title           = "Preparando la partida",
+                    //Subtitle        = "",
+                   // Body            = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et aliquet nunc. \nSed ultricies sed augue sit amet maximus. In vel tellus sed ipsum volutpat venenatis et sit amet diam. Suspendisse feugiat mollis nibh, in facilisis diam convallis sit amet. \n\nMaecenas lectus turpis, rhoncus et est at, lacinia placerat urna. Praesent malesuada consectetur justo, scelerisque fermentum enim lobortis ullamcorper. Duis commodo sit amet ligula vitae luctus. Nulla commodo ipsum a lorem efficitur luctus.",
+                    //Section         = "ACTUALITY",
+                    //Author          = "UXDIVERS",
+                    //Avatar          = SampleData.Friends[3].Avatar,
+                    BackgroundImage = SampleData.ArticlesImagesList[0],
+                    //Quote           = "Donec euismod nulla et sem lobortis ultrices. Cras id imperdiet metus. Sed congue luctus arcu.",
+                    //QuoteAuthor     = SampleData.Friends[3].Name,
+                    //When            = "JAN 6, 2017",
+                    //Likes           = "2.1k",
+                    //Followers       = "112",
+                },
+
+                new Post {
 					Title           = "United by faith",
 					Subtitle        = "Friendship beyond everything",
 					Body            = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et aliquet nunc. \nSed ultricies sed augue sit amet maximus. In vel tellus sed ipsum volutpat venenatis et sit amet diam. Suspendisse feugiat mollis nibh, in facilisis diam convallis sit amet. \n\nMaecenas lectus turpis, rhoncus et est at, lacinia placerat urna. Praesent malesuada consectetur justo, scelerisque fermentum enim lobortis ullamcorper. Duis commodo sit amet ligula vitae luctus. Nulla commodo ipsum a lorem efficitur luctus.",
@@ -488,65 +1806,148 @@ namespace Camping
 		{
 			return new List<Message> {
 				new Message(
-					Friends[5],
+					Friends[0],
+                    0,
+                    0,
 					7,
 					true,
-					"July 7",
+					"",
 					"Hey check this out!",
-					"In connection with this appellative of 'Whalebone whales,' it is of great leap of yer happiness leadership colors.",
+					"Descubre a donde puedes llegar",
 					true,
 					true
 				),
 
 				new Message(
 					Friends[1],
+                    0,
+                    1,
 					3,
 					false,
-					"Yesterday",
+					"",
 					"Artina is awesome...you'll love it",
-					"In connection with this appellative of 'Whalebone whales,' it is of great leap of yer happiness leadership colors.",
+					"Inspirado por la vida HI-TEC",
 					false,
 					true
 				),
 
 				new Message(
 					Friends[2],
+                    0,
+                    2,
 					1,
 					true,
-					"July 7",
+					"",
 					"Artina is awesome...you'll love it",
-					"In connection with this appellative of 'Whalebone whales,' it is of great leap of yer happiness leadership colors.",
+					"Es importante en todo tipo de actividad, contar con indumentaria lo mas resistente al agua posible",
 					false,
 					false
 				),
 
 				new Message(
 					Friends[3],
+                    0,
+                    3,
 					2,
 					true,
-					"July 7",
+					"",
 					"Artina is awesome...you'll love it",
-					"In connection with this appellative of 'Whalebone whales,' it is of great leap of yer happiness leadership colors.",
+					"Adquiera bolsas de basura y separe sus desechos orgánicos e inorgánicos. Nunca los deje en el campamento",
 					false,
 					false
 				),
 
 				new Message(
 					Friends[4],
+                    0,
+                    4,
 					10,
 					false,
-					"3 minutes ago",
+					"",
 					"Artina is awesome...you'll love it",
-					"In connection with this appellative of 'Whalebone whales,' it is of great leap of yer happiness leadership colors.",
+					"Tenga siempre a la mano un cobertor impermeable y nunca deje su mochila fuera de la carpa",
 					true,
 					false
 				),
+                new Message(
+                    Friends[5],
+                    5,
+                    5,
+                    10,
+                    false,
+                    "",
+                    "Artina is awesome...you'll love it",
+                    "<p><b>Visita a Walter en:</b></p><p>www.walterwust.com</p>",
+                    true,
+                    false
+                ),
+                new Message(
+                    Friends[6],
+                    5,
+                    6,
+                    10,
+                    false,
+                    "",
+                    "Artina is awesome...you'll love it",
+                    "<p><b>Visita a Richard en:</b></p><p>http://richardhidalgo.com</p>",
+                    true,
+                    false
+                ),
+                new Message(
+                    Friends[7],
+                    5,
+                    7,
+                    10,
+                    false,
+                    "",
+                    "Artina is awesome...you'll love it",
+                    "<p><b>Visita a Ricardo en:</b></p><p>www.peru8mil.com</p>",
+                    true,
+                    false
+                ),
+                new Message(
+                    Friends[8],
+                    5,
+                    8,
+                    10,
+                    false,
+                    "",
+                    "Artina is awesome...you'll love it",
+                    "<p><b>Visita a Duilio en:</b></p><p>www.munaycha.com</p>",
+                    true,
+                    false
+                ),
+                new Message(
+                    Friends[9],
+                    5,
+                    9,
+                    10,
+                    false,
+                    "",
+                    "Artina is awesome...you'll love it",
+                    "<p><b>Visita a Ernesto en:</b></p><p>www.peru8mil.com</p>",
+                    true,
+                    false
+                ),
+                new Message(
+                    Friends[10],
+                    5,
+                    10,
+                    10,
+                    false,
+                    "",
+                    "Artina is awesome...you'll love it",
+                    "<p><b>Visita a Miguel en:</b></p><p>www.andatrekkings.com</p>",
+                    true,
+                    false
+                ),
 
-				new Message(
+				/*new Message(
 					Friends[0],
+                    5,
 					5,
 					false,
-					"July 7",
+					"",
 					"Artina is awesome...you'll love it",
 					"In connection with this appellative of 'Whalebone whales,' it is of great leap of yer happiness leadership colors.",
 					true,
@@ -555,6 +1956,7 @@ namespace Camping
 
 				new Message(
 					Friends[6],
+                    6,
 					7,
 					false,
 					"July 7",
@@ -562,7 +1964,7 @@ namespace Camping
 					"In connection with this appellative of 'Whalebone whales,' it is of great leap of yer happiness leadership colors.",
 					true,
 					false
-				),
+				),*/
 
 			};
 		}

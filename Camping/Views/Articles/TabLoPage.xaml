@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Camping.Views.Articles.TabLoPage"
+	xmlns:artina="clr-namespace:UXDivers.Artina.Shared;assembly=UXDivers.Artina.Shared"
+	xmlns:local="clr-namespace:Camping;assembly=Camping"
+	xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+	Title="Article Lo View"
+	BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+
+    <ScrollView 
+		x:Name="outerScrollView"
+		Padding="{ DynamicResource MainWrapperPadding }">
+
+        <Grid 
+				x:Name="layeringGrid" 
+				RowSpacing="0"
+				VerticalOptions="FillAndExpand">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="240" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid 
+					Grid.Row="0"
+					Grid.RowSpan="2"
+					Padding="0"
+					BackgroundColor="Black">
+
+                <!-- MAIN IMAGE -->
+                <ffimageloading:CachedImage
+						x:Name="img"
+						Source="{ Binding LoPage.ImageLo }"
+						Aspect="AspectFill"
+						BackgroundColor="Black"
+						HorizontalOptions="FillAndExpand"
+						VerticalOptions="Start"
+						Opacity=".8"/>
+            </Grid>
+
+            <!-- MAIN HEADER -->
+            <StackLayout
+					Grid.Row="0"
+					Padding="20"
+					Spacing="0"
+					VerticalOptions="End"
+					x:Name="headers" 
+					AnchorX="0"
+					AnchorY="0">
+
+                <!-- HEADERS -->
+                <Label
+						Text="{ Binding LoPage.Title }"
+						LineBreakMode="WordWrap"
+						TextColor="{ DynamicResource OverImageTextColor }"
+						FontSize="26"
+						FontAttributes="Bold"/>
+
+                <Label
+						Text="{ Binding Post.Subtitle }"
+						LineBreakMode="WordWrap"
+						TextColor="{ DynamicResource OverImageTextColor }"
+						FontSize="16"/>
+
+ 
+            </StackLayout>
+
+
+
+            <Grid
+					Grid.Row="1"
+					BackgroundColor="{ DynamicResource BasePageColor }">
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <StackLayout
+                    x:Name="contentLayoutIcons"
+                    Orientation="Horizontal"
+                    HorizontalOptions="FillAndExpand"
+				    VerticalOptions="FillAndExpand"
+                    BackgroundColor="#FFAD00"
+                    Padding="0,0,0,0">
+                    <StackLayout
+                        Orientation="Horizontal"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        BackgroundColor="#FFAD00">
+                        
+                        
+                    
+                    <AbsoluteLayout>
+                        <Image
+                            Source="icon_costa.png"
+                            WidthRequest="85"
+                            HeightRequest="85"
+                            MinimumWidthRequest="85"
+                            MinimumHeightRequest="85"
+                            Aspect="AspectFill"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="OnTapGestureRecognizerTapped"
+                                    />
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <AbsoluteLayout
+                            x:Name="layout_costa"
+                            WidthRequest="85"
+                            HeightRequest="85"
+                            MinimumWidthRequest="85"
+                            MinimumHeightRequest="85"
+                            BackgroundColor="#50000000"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand">
+                            <AbsoluteLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Click_Item_Costa"/>
+                            </AbsoluteLayout.GestureRecognizers>
+                        </AbsoluteLayout>
+                    </AbsoluteLayout>
+
+
+                    <AbsoluteLayout>
+                        <Image
+                            Source="icon_sierra.png"
+                            WidthRequest="85"
+                            HeightRequest="85"
+                            MinimumWidthRequest="85"
+                            MinimumHeightRequest="85"
+                            Aspect="AspectFill"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            >
+                            
+                        </Image>
+                        <AbsoluteLayout
+                            x:Name="layout_sierra"
+                            WidthRequest="85"
+                            HeightRequest="85"
+                            MinimumWidthRequest="85"
+                            MinimumHeightRequest="85"
+                            BackgroundColor="#00ffffff"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand">
+                            <AbsoluteLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Click_Item_Sierra"/>
+                            </AbsoluteLayout.GestureRecognizers>
+                        </AbsoluteLayout>
+                    </AbsoluteLayout>
+
+
+                    <AbsoluteLayout>
+                        <Image
+                            Source="icon_selva.png"
+                            WidthRequest="85"
+                            HeightRequest="85"
+                            MinimumWidthRequest="85"
+                            MinimumHeightRequest="85"
+                            Aspect="AspectFill"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            >
+                            
+                        </Image>
+                        <AbsoluteLayout
+                            x:Name="layout_selva"
+                            WidthRequest="85"
+                            HeightRequest="85"
+                            MinimumWidthRequest="85"
+                            MinimumHeightRequest="85"
+                            BackgroundColor="#00ffffff"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand">
+                            <AbsoluteLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Click_Item_Selva"/>
+                            </AbsoluteLayout.GestureRecognizers>
+                        </AbsoluteLayout>
+                    </AbsoluteLayout>
+
+
+
+                    <AbsoluteLayout>
+                        <Image
+                            Source="icon_like.png"
+                            WidthRequest="85"
+                            HeightRequest="85"
+                            MinimumWidthRequest="85"
+                            MinimumHeightRequest="85"
+                            Aspect="AspectFill"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            >
+                            
+                        </Image>
+                        <AbsoluteLayout
+                            x:Name="layout_like"
+                            WidthRequest="85"
+                            HeightRequest="85"
+                            MinimumWidthRequest="85"
+                            MinimumHeightRequest="85"
+                            BackgroundColor="#00ffffff"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            
+                            >
+                            <AbsoluteLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Click_Item_Like"/>
+                            </AbsoluteLayout.GestureRecognizers>
+                            
+                        </AbsoluteLayout>
+                    </AbsoluteLayout>
+                    </StackLayout>
+
+                </StackLayout>
+
+                <ListView
+						Grid.Row="4"
+						ItemsSource="{ Binding Circles }"
+						SeparatorColor="{ DynamicResource ListViewSeparatorColor}"
+						SeparatorVisibility="Default"
+						RowHeight="180"
+						ItemTapped="OnItemTapped"
+						VerticalOptions="FillAndExpand">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem 
+											 Clicked="OnMore"
+											 Text="More"/>
+                                    <MenuItem 
+											 Clicked="OnDelete"
+											 Text="Delete" 
+											 IsDestructive="True" />
+                                </ViewCell.ContextActions>
+
+                                <local:PlaceItemTemplate />
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+
+            </Grid>
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

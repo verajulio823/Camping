@@ -2,7 +2,11 @@ namespace Camping
 {
 	public class GrialShapesFont
 	{
-		public const string AccountCircle = "\ue853";
+        public const string IconHome = "iconhome.png";
+        public const string IconCifras = "iconcifras.png";
+        public const string IconLike = "iconvidasilvestre.png";
+        public const string IconServicios = "iconhome.png";
+        public const string AccountCircle = "\ue853";
 		public const string ArrowDown = "\ue313";
 		public const string ArrowLeft = "\ue314";
 		public const string ArrowRight = "\ue315";

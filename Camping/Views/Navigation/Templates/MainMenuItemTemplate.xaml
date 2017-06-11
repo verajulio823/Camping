@@ -20,20 +20,33 @@
 		HorizontalOptions="FillAndExpand">
 
 		<!-- ICON -->
-		<Label
+		<!--<Label
 			Text="{ Binding Icon }"
 			Style="{ DynamicResource MainMenuIconStyle }"
-			HorizontalTextAlignment="Start"
+			HorizontalTextAlignment="Start"            
 			VerticalTextAlignment="Center" 
 			AbsoluteLayout.LayoutBounds="0, 0.5, 20, 1"
 			AbsoluteLayout.LayoutFlags="XProportional, YProportional, HeightProportional"
-		/>
-
+		/>-->
+        <Image
+            WidthRequest="80"
+            HeightRequest="80"
+            Source="{Binding Icon}"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"
+            AbsoluteLayout.LayoutBounds="0,0.5,20,1"
+            AbsoluteLayout.LayoutFlags="XProportional, YProportional, HeightProportional"
+         >
+            
+        </Image>
+        
 		<!-- FULL LABEL -->
 		<Label
 			AbsoluteLayout.LayoutBounds="24, 0, 1, 1"
 			AbsoluteLayout.LayoutFlags="WidthProportional, HeightProportional"
 			Text="{ Binding Name }" 
+            TextColor="#ffffff"
+            FontSize="Default"
 			Style="{ DynamicResource MainMenuLabelStyle }" 
 			VerticalTextAlignment="Center" 
 			IsVisible="{ Binding IsNew, Converter={ StaticResource InvertBoolConverter } }"
@@ -49,6 +62,7 @@
 			AbsoluteLayout.LayoutBounds="24, 0, 1, 1"
 			AbsoluteLayout.LayoutFlags="WidthProportional, HeightProportional"
 			Margin="0,0,92,0"/>
+        
 		
 		<!-- NEW BADGE -->
 		<local:RoundedLabel 
@@ -59,6 +73,7 @@
 			HorizontalOptions="End"
 			RoundedLabelText="NEW"
 		/>
+        
 	</AbsoluteLayout>
 
 </ContentView>

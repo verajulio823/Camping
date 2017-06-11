@@ -1,3 +1,4 @@
+using Camping.Views.Articles;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
@@ -74,7 +75,30 @@ namespace Camping
 		{
 			var categories = new Dictionary<string, SampleCategory>();
 
-			categories.Add(
+
+            categories.Add(
+                "",
+                new SampleCategory
+                {
+                    Name = "",
+                    BackgroundColor = Color.Transparent,//FromHex();//(_categoriesColors[0]),
+                    BackgroundImage = SampleData.DashboardImagesList[6],
+                    Icon = GrialShapesFont.Person,
+                    Badge = 2,
+                    SamplesList = new List<Sample> {
+                        new Sample("Preparando la partida", typeof(ArticleLoViewPage), SampleData.DashboardImagesList[6], GrialShapesFont.IconHome),//GrialShapesFont.QueryBuilder),
+                        new Sample("Los mejores 50 campamentos", typeof(TabLoPage), SampleData.DashboardImagesList[6], GrialShapesFont.IconCifras),//GrialShapesFont.QueryBuilder),
+                        new Sample("Mis mejores campamentos", typeof(ProfilePage), SampleData.DashboardImagesList[6], GrialShapesFont.IconLike),//GrialShapesFont.AccountCircle),
+                        new Sample("La palabra del experto", typeof(ArticleExpertViewPage), SampleData.DashboardImagesList[6], GrialShapesFont.IconServicios),//GrialShapesFont.Group),
+                        //new Sample("Social Variant", typeof(SocialVariantPage), SampleData.DashboardImagesList[6], GrialShapesFont.Group),
+
+                    }
+                }
+            );
+
+
+            /*
+            categories.Add(
 				"SOCIAL",
 				new SampleCategory
 				{
@@ -265,7 +289,7 @@ namespace Camping
 					}
 				}
 			);
-
+            */
 			return categories;
 		}
 

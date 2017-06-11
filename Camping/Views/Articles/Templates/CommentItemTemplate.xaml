@@ -3,7 +3,8 @@
 	xmlns="http://xamarin.com/schemas/2014/forms" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 	x:Class="Camping.CommentItemTemplate"
-	xmlns:artina="clr-namespace:UXDivers.Artina.Shared;assembly=UXDivers.Artina.Shared" >
+	xmlns:artina="clr-namespace:UXDivers.Artina.Shared;assembly=UXDivers.Artina.Shared" 
+    xmlns:controls="clr-namespace:Camping.Views;assembly=Camping" >
 	<StackLayout
 		Spacing="5"
 		Orientation="Horizontal" 
@@ -11,32 +12,37 @@
 		HorizontalOptions="FillAndExpand" 
 		VerticalOptions="Center">
 
-		<artina:CircleImage 
+<!--		<artina:CircleImage 
 			Source="{ Binding From.Avatar }"
 			Style="{ StaticResource Avatar }"
 			Aspect ="AspectFill"
 			HorizontalOptions = "Center"
 			VerticalOptions = "Start"  
 			TranslationY="7"/>
-
+-->
 		<StackLayout
 			Padding="0" 
 			Spacing="0"
 			Orientation="Horizontal"
-			HorizontalOptions="StartAndExpand">
+			HorizontalOptions="StartAndExpand"
+            VerticalOptions="StartAndExpand">
 
 			<StackLayout 
 				HorizontalOptions="FillAndExpand" 
 				Spacing="0" 
-				Padding="10">
+				Padding="10"
+                VerticalOptions="Start"
+                >
 
 			<Label
 				Text="{ Binding From.Name }" 
 				FontAttributes="Bold"
 				HorizontalOptions="FillAndExpand"
 				VerticalOptions="StartAndExpand"
-				TextColor="{ DynamicResource ComplementColor }" />
+				TextColor="{ DynamicResource ComplementColor }" 
+                FontSize="20"  />
 
+                <!--
 			<StackLayout 
 				HorizontalOptions="FillAndExpand" 
 				Spacing="0" 
@@ -46,13 +52,20 @@
 					TextColor="{ DynamicResource BaseTextColor }"
 					FontSize="13" />
 			</StackLayout>
-
-			<Label
+                -->
+                <controls:HtmlFormattedLabel
+                 Text="{ Binding Body }"
+				LineBreakMode="WordWrap"
+				TextColor="{ DynamicResource BaseTextColor }"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="FillAndExpand" />
+			<!--<Label
 				Text="{ Binding Body }"
 				LineBreakMode="WordWrap"
 				TextColor="{ DynamicResource BaseTextColor }"
 				HorizontalOptions="FillAndExpand"
 				VerticalOptions="FillAndExpand" />
+                -->
 
 			</StackLayout>
 
